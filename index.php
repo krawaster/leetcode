@@ -1,3 +1,3 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-new \SlidingWindow\minimumWindowSubstring\Solution();
+new \Array\SingleNumber\Solution();
