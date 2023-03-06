@@ -8,7 +8,6 @@ help:
 	@echo 'make down                    - stop environment'
 	@echo 'make install                 - install composer dependency with php from container'
 	@echo 'make enter-php               - enter container with PHP'
-	@echo 'make test        			- run tests'
 	@echo 'make stop        			- suspend existing containers'
 	@echo 'make run        				- run suspended containers'
 
@@ -40,11 +39,11 @@ enter-php-fpm:
 	cd docker && docker-compose run ${container} sh
 
 tail-logs:
-	docker-compose logs -f ${container}
+	cd docker docker-compose logs -f ${container}
 
 stop:
-	docker-compose stop
+	cd docker docker-compose stop
 
 run:
-	docker-compose start
+	cd docker docker-compose start
 
