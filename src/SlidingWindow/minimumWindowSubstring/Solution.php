@@ -2,20 +2,14 @@
 
 namespace SlidingWindow\minimumWindowSubstring;
 
+$s = "ADOBECODEBANC";
+$t = "ABC";
+(new Solution())->minWindow($s, $t);
 /**
  * https://leetcode.com/problems/minimum-window-substring/description/
  */
 class Solution
 {
-    public function __construct()
-    {
-        $s = "ADOBECODEBANC";
-        $t = "ABC";
-        $result = $this->minWindow($s, $t);
-//        $result = $this->minWindowExample($s, $t);
-    }
-
-
     /**
      * @param String $s
      * @param String $t
