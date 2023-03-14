@@ -39,11 +39,11 @@ enter-php-fpm:
 	cd docker && docker-compose run ${container} sh
 
 tail-logs:
-	cd docker docker-compose logs -f ${container}
+	cd docker && docker-compose logs -f ${container}
 
 stop:
-	cd docker docker-compose stop
+	cd docker && docker-compose stop
 
 run:
-	cd docker docker-compose start
+	cd docker && docker-compose start
 

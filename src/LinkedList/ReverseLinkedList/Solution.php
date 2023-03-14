@@ -9,6 +9,9 @@ $node2 = new ListNode(2, $node3);
 $node1 = new ListNode(1, $node2);
 $result = (new Solution())->reverseList($node1);
 
+/**
+ * https://leetcode.com/problems/reverse-linked-list/
+ */
 class ListNode {
      public $val = 0;
      public $next = null;
@@ -26,17 +29,13 @@ class Solution
      */
     function reverseList($head)
     {
-        $prev = false;
-        while ($head) {
-            $node = new ListNode($head->val);
-            if($prev){
-                $node->next = $prev;
-                $prev = $node;
-            } else {
-                $prev = $node;
-            }
-
-            $head = $head->next;
+        $prev = null;
+        $current = $head;
+        while ($head || $current->next) {
+            $nextTemp = $current->next;
+            $current->next = $prev;
+            $prev = $current;
+            $current = $nextTemp;
         }
 
         return $prev;
