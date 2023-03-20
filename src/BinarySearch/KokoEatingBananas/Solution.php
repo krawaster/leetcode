@@ -7,6 +7,9 @@ $h = 8;
 
 (new Solution())->minEatingSpeedBinarySearch($piles, $h);
 
+/**
+ * https://leetcode.com/problems/koko-eating-bananas/
+ */
 class Solution
 {
     /**
