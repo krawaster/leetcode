@@ -2,6 +2,8 @@
 
 namespace LinkedList\MergeTwoSortedLists;
 
+use \ListNode;
+
 $list14 = new ListNode(4);
 $list12 = new ListNode(2, $list14);
 $list1 = new ListNode(1, $list12);
@@ -13,14 +15,14 @@ $list2 = new ListNode(1, $list23);
 $result = (new Solution())->mergeTwoLists($list1, $list2);
 $stop = 'stop';
 
-class ListNode {
-    public $val = 0;
-    public $next = null;
-    function __construct($val = 0, $next = null) {
-        $this->val = $val;
-        $this->next = $next;
-    }
-}
+//class ListNode {
+//    public $val = 0;
+//    public $next = null;
+//    function __construct($val = 0, $next = null) {
+//        $this->val = $val;
+//        $this->next = $next;
+//    }
+//}
 
 /**
  * https://leetcode.com/problems/merge-two-sorted-lists/
