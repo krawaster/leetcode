@@ -1,10 +1,10 @@
-# 🇺🇦 Faang Learning Groups UA — Осінь 2025
+# LeetCode Solutions (PHP)
 
-Цей репозиторій містить навчальну програму, розклад і методику роботи нашої української групи з підготовки до технічних інтерв'ю у FAANG-компаніях та інших топових роботодавців.
+Local environment for practicing and debugging algorithms in PHP. Supports Docker + Xdebug with IntelliJ IDEA or Cursor. See [SETUP.md](SETUP.md) for setup instructions.
 
 ---
 
-## 🌟 Програма з задачами (Leetcode)
+## Problem list (LeetCode)
 
 ### Arrays & Hashing
 - https://leetcode.com/problems/single-number/
