@@ -2,6 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch current PHP file (local)",
+      "type": "php",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "port": 9003,
+      "runtimeArgs": [
+        "-dxdebug.start_with_request=yes",
+        "-dxdebug.client_host=127.0.0.1",
+        "-dxdebug.client_port=9003"
+      ],
+      "env": {
+        "XDEBUG_MODE": "debug,develop"
+      },
+      "runtimeExecutable": "/opt/homebrew/opt/php@8.4/bin/php",
+      "hostname": "127.0.0.1",
+      "stopOnEntry": false
+    },
+    {
       "name": "Listen for Xdebug (Docker)",
       "type": "php",
       "request": "launch",
@@ -10,18 +29,6 @@
         "/var/www/html": "${workspaceFolder}"
       },
       "log": true
-    },
-    {
-      "name": "Launch current PHP file (local)",
-      "type": "php",
-      "request": "launch",
-      "program": "${file}",
-      "cwd": "${fileDirname}",
-      "port": 0,
-      "runtimeArgs": ["-dxdebug.start_with_request=yes"],
-      "env": {
-        "XDEBUG_MODE": "debug,develop"
-      }
     }
   ]
 }
