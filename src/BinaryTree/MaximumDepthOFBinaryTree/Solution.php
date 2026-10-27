@@ -8,7 +8,9 @@ $node2 = new TreeNode(2);
 $node3 = new TreeNode(3,null, $node2);
 $root = new TreeNode(1, $node3);
 
-(new Solution())->maxDepth($root);
+$res = (new Solution())->maxDepth($root);
+$stop = 1;
+
 
 class TreeNode {
      public $val = null;
