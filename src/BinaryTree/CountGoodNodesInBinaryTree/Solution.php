@@ -27,12 +27,43 @@ class TreeNode {
  * https://leetcode.com/problems/count-good-nodes-in-binary-tree/
  */
 class Solution {
-
+    private int $count = 0;
     /**
      * @param TreeNode $root
      * @return Integer
      */
     function goodNodes($root) {
+        $this->dfs($root, $root->val);
+
+        return $this->count;
+    }
+
+    function dfs($root, $max) {
+        if ($root == null) {
+            return 0;
+        }
+
+        $max = max($max, $root->val);
+
+        if($root->left != null) {
+            $this->dfs($root->left, $max);
+        }
+
+        if ($root->right != null) {
+            $this->dfs($root->right, $max);
+        }
+
+        if ($root->val >= $max) {
+            $this->count++;
+            return true;
+        }
+    }
+
+    /**
+     * @param TreeNode $root
+     * @return Integer
+     */
+    function goodNodesOld($root) {
         $count = 0;
         $queue = [];
         $queue[] = ['cur' => $root, 'max' => PHP_INT_MIN];
