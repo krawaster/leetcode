@@ -12,11 +12,13 @@ $root = new TreeNode(1, $node11, $node4);
 $result = (new Solution())->goodNodes($root);
 $test = 1;
 
-class TreeNode {
+class TreeNode
+{
     public $val = null;
     public $left = null;
     public $right = null;
-    function __construct($val = 0, $left = null, $right = null) {
+    function __construct($val = 0, $left = null, $right = null)
+    {
         $this->val = $val;
         $this->left = $left;
         $this->right = $right;
@@ -26,26 +28,29 @@ class TreeNode {
 /**
  * https://leetcode.com/problems/count-good-nodes-in-binary-tree/
  */
-class Solution {
+class Solution
+{
     private int $count = 0;
     /**
      * @param TreeNode $root
      * @return Integer
      */
-    function goodNodes($root) {
+    function goodNodes($root)
+    {
         $this->dfs($root, $root->val);
 
         return $this->count;
     }
 
-    function dfs($root, $max) {
+    function dfs($root, $max)
+    {
         if ($root == null) {
             return 0;
         }
 
         $max = max($max, $root->val);
 
-        if($root->left != null) {
+        if ($root->left != null) {
             $this->dfs($root->left, $max);
         }
 
@@ -63,12 +68,13 @@ class Solution {
      * @param TreeNode $root
      * @return Integer
      */
-    function goodNodesOld($root) {
+    function goodNodesOld($root)
+    {
         $count = 0;
         $queue = [];
         $queue[] = ['cur' => $root, 'max' => PHP_INT_MIN];
 
-        while($queue) {
+        while ($queue) {
             $cur = array_shift($queue);
 
             if ($cur['max'] <= $cur['cur']->val) {
